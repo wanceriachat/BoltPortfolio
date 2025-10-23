@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Portfolio</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #f59e0b, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-950 text-white">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-6"
+    >
+      <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        <button
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+          class="flex items-center gap-2 group"
+        >
+          <i
+            data-lucide="sparkles"
+            class="w-6 h-6 text-amber-400 group-hover:rotate-12 transition-transform"
+          ></i>
+          <span class="font-bold text-xl gradient-text">Wan Nurfarah Adni</span>
+        </button>
+
+        <div class="hidden md:flex items-center gap-8">
+          <button
+            onclick="scrollToSection('about')"
+            class="text-gray-400 hover:text-amber-400 transition-colors font-medium"
+          >
+            About
+          </button>
+          <button
+            onclick="scrollToSection('projects')"
+            class="text-gray-400 hover:text-amber-400 transition-colors font-medium"
+          >
+            Projects
+          </button>
+          <button
+            onclick="scrollToSection('skills')"
+            class="text-gray-400 hover:text-amber-400 transition-colors font-medium"
+          >
+            Skills
+          </button>
+          <button
+            onclick="scrollToSection('contact')"
+            class="text-gray-400 hover:text-amber-400 transition-colors font-medium"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      class="min-h-screen flex items-center justify-center relative px-6 overflow-hidden"
+      id="hero"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-amber-500/5 via-transparent to-rose-500/5 pointer-events-none"
+      ></div>
+
+      <div class="max-w-4xl mx-auto text-center z-10">
+        <div class="inline-block mb-6 animate-float">
+          <i
+            data-lucide="sparkles"
+            class="w-16 h-16 text-amber-400"
+            stroke-width="1.5"
+          ></i>
+        </div>
+
+        <h1
+          class="text-5xl md:text-7xl font-bold mb-6 gradient-text leading-tight"
+        >
+          Building Intelligence, <br />
+          One Prompt at a Time
+        </h1>
+
+        <p
+          class="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed"
+        >
+          AI Engineer crafting intelligent experiences through prompt design,
+          automation workflows, and a touch of creative code magic.
+        </p>
+
+        <button
+          onclick="scrollToSection('projects')"
+          class="group bg-gradient-to-r from-amber-500 to-rose-500 text-gray-950 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-amber-500/50 inline-flex items-center gap-2"
+        >
+          View My Work
+          <i
+            data-lucide="chevron-down"
+            class="w-5 h-5 group-hover:translate-y-1 transition-transform"
+          ></i>
+        </button>
+      </div>
+
+      <!--<div
+        class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-gray-600"
+      >
+        <i data-lucide="chevron-down" class="w-6 h-6"></i>
+      </div>-->
+    </section>
+
+    <!-- About -->
+    <section class="py-24 px-6" id="about">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">
+          <span class="gradient-text">About Me</span>
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="space-y-6">
+            <p class="text-gray-300 text-lg leading-relaxed">
+              I'm passionate about building intelligent systems that think,
+              respond, and create. I've worked on AI chatbots, n8n automations,
+              and prompt-based content generation. My approach combines
+              structured logic with creative AI experimentation.
+            </p>
+
+            <p class="text-gray-300 text-lg leading-relaxed">
+              Fresh from mathematical sciences and now thriving in the AI
+              startup world, I focus on transforming complex ideas into elegant,
+              automated solutions that actually work.
+            </p>
+
+            <div class="pt-4">
+              <h3
+                class="text-xl font-semibold text-amber-400 mb-4"
+              >
+                Currently Exploring
+              </h3>
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="px-4 py-2 bg-gray-900/50 border border-rose-500/30 rounded-full text-sm text-gray-300 hover:border-rose-500 transition-colors"
+                  >Vibe Coding</span
+                >
+                <span
+                  class="px-4 py-2 bg-gray-900/50 border border-rose-500/30 rounded-full text-sm text-gray-300 hover:border-rose-500 transition-colors"
+                  >AI Workflow Design</span
+                >
+                <span
+                  class="px-4 py-2 bg-gray-900/50 border border-rose-500/30 rounded-full text-sm text-gray-300 hover:border-rose-500 transition-colors"
+                  >Automation Scaling</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div
+              class="group p-6 bg-gray-900/50 border border-amber-500/20 rounded-2xl hover:border-amber-500 hover:bg-gray-900 transition-all duration-300 hover:scale-105 cursor-pointer"
+            >
+              <i
+                data-lucide="brain"
+                class="w-10 h-10 text-amber-400 mb-3 group-hover:scale-110 transition-transform"
+              ></i>
+              <h4 class="font-semibold text-gray-200">Prompt Design</h4>
+            </div>
+            <div
+              class="group p-6 bg-gray-900/50 border border-amber-500/20 rounded-2xl hover:border-amber-500 hover:bg-gray-900 transition-all duration-300 hover:scale-105 cursor-pointer"
+            >
+              <i
+                data-lucide="workflow"
+                class="w-10 h-10 text-amber-400 mb-3 group-hover:scale-110 transition-transform"
+              ></i>
+              <h4 class="font-semibold text-gray-200">n8n Automation</h4>
+            </div>
+            <div
+              class="group p-6 bg-gray-900/50 border border-amber-500/20 rounded-2xl hover:border-amber-500 hover:bg-gray-900 transition-all duration-300 hover:scale-105 cursor-pointer"
+            >
+              <i
+                data-lucide="code-2"
+                class="w-10 h-10 text-amber-400 mb-3 group-hover:scale-110 transition-transform"
+              ></i>
+              <h4 class="font-semibold text-gray-200">
+                AI Chatbot Development
+              </h4>
+            </div>
+            <div
+              class="group p-6 bg-gray-900/50 border border-amber-500/20 rounded-2xl hover:border-amber-500 hover:bg-gray-900 transition-all duration-300 hover:scale-105 cursor-pointer"
+            >
+              <i
+                data-lucide="sparkles"
+                class="w-10 h-10 text-amber-400 mb-3 group-hover:scale-110 transition-transform"
+              ></i>
+              <h4 class="font-semibold text-gray-200">AI-Assisted Coding</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="py-24 px-6 bg-gray-900/30" id="projects">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+          Featured Projects
+        </h2>
+        <p class="text-gray-400 mb-16 text-lg">
+          Intelligent systems and creative automations
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+          <!-- Project Card Example -->
+          <div
+            class="group p-8 bg-gradient-to-br from-amber-500/20 to-orange-500/20 border border-gray-800 rounded-2xl hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div
+                class="p-3 bg-gray-900/80 rounded-xl group-hover:bg-gray-900 transition-colors"
+              >
+                <i data-lucide="brain" class="w-8 h-8 text-amber-400"></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-gray-100 flex-1 group-hover:text-amber-400 transition-colors"
+              >
+                Prompt Engineering Experiments
+              </h3>
+            </div>
+            <p class="text-gray-400 mb-6">
+              Exploring advanced prompt patterns and techniques to optimize AI 
+              model outputs for various use cases, from creative writing to technical documentation.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >AI</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >Prompting</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >GPT</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group p-8 bg-gradient-to-br from-rose-500/20 to-pink-500/20 border border-gray-800 rounded-2xl hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div class="p-3 bg-gray-900/80 rounded-xl">
+                <i data-lucide="bot" class="w-8 h-8 text-amber-400"></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-gray-100 flex-1 group-hover:text-amber-400 transition-colors"
+              >
+                AI Chatbot Development
+              </h3>
+            </div>
+            <p class="text-gray-400 mb-6">
+              Building intelligent conversational agents with personality, context awareness, 
+              and domain expertise for enhanced user experiences.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >NLP</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >Chatbot</span
+              >
+            </div>
+          </div>
+          
+          <div
+            class="group p-8 bg-gradient-to-br from-purple-500/20 to-indigo-500/20 border border-gray-800 rounded-2xl hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div class="p-3 bg-gray-900/80 rounded-xl">
+                <i data-lucide="workflow" class="w-8 h-8 text-amber-400"></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-gray-100 flex-1 group-hover:text-amber-400 transition-colors"
+              >
+                n8n Automations
+              </h3>
+            </div>
+            <p class="text-gray-400 mb-6">
+              Designing and implementing sophisticated workflow automations that 
+              connect AI services, databases, and APIs to streamline business processes.            
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >Automation</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >API Integration</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="group p-8 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-gray-800 rounded-2xl hover:border-amber-500/50 transition-all duration-300 hover:scale-[1.02]"
+          >
+            <div class="flex items-start gap-4 mb-4">
+              <div class="p-3 bg-gray-900/80 rounded-xl">
+                <i data-lucide="file-text" class="w-8 h-8 text-amber-400"></i>
+              </div>
+              <h3
+                class="text-2xl font-bold text-gray-100 flex-1 group-hover:text-amber-400 transition-colors"
+              >
+                AI Blog Generator
+              </h3>
+            </div>
+            <p class="text-gray-400 mb-6">
+              Developed content generation pipelines using Penpilot and Outranking 
+              to create SEO-optimized, high-quality blog posts at scale.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >AI</span
+              >
+              <span
+                class="px-3 py-1 bg-gray-900/60 text-gray-300 text-sm rounded-full border border-gray-700"
+                >SEO</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="py-24 px-6" id="skills">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 gradient-text">
+          Skills & Expertise
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8 mb-12 text-left">
+          <!-- AI Tools -->
+          <div
+            class="p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-amber-500/50 transition-all duration-300"
+          >
+            <h3 class="text-xl font-bold text-amber-400 mb-6">AI Tools</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">ChatGPT</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">OpenAI API</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">Penpilot</span>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Development -->
+          <div
+            class="p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-amber-500/50 transition-all duration-300"
+          >
+            <h3 class="text-xl font-bold text-amber-400 mb-6">Development</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">API Integration</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">Python</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">Webhooks</span>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Concepts -->
+          <div
+            class="p-8 bg-gray-900/50 border border-gray-800 rounded-2xl hover:border-amber-500/50 transition-all duration-300"
+          >
+            <h3 class="text-xl font-bold text-amber-400 mb-6">Concepts</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">Prompt Engineering</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">Workflow Automation</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-gray-950/50 rounded-lg hover:bg-gray-950 transition-all cursor-pointer">
+                <div class="w-2 h-2 bg-amber-400 rounded-full"></div>
+                <span class="text-gray-300">AI Ethics & Design</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <div
+          class="relative p-8 bg-gradient-to-r from-rose-500/10 via-amber-500/10 to-rose-500/10 border border-rose-500/30 rounded-2xl text-center overflow-hidden group hover:border-rose-500 transition-all"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-transparent via-rose-500/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
+          ></div>
+          <div
+            class="relative z-10 flex items-center justify-center gap-3 text-center"
+          >
+            <i
+              data-lucide="sparkles"
+              class="w-6 h-6 text-rose-400 animate-pulse"
+            ></i>
+            <h3
+              class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-amber-400"
+            >
+              Current Interest: Vibe Coding
+            </h3>
+            <i
+              data-lucide="sparkles"
+              class="w-6 h-6 text-amber-400 animate-pulse"
+            ></i>
+          </div>
+          <p class="text-gray-400 mt-3 relative z-10">
+            Exploring intuitive, flow-state development where creativity meets
+            functionality
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-24 px-6 bg-gray-900/30" id="contact">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+          Let's Connect
+        </h2>
+        <p class="text-xl text-gray-400 mb-12">
+          Let's build intelligent experiences together.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <!--<a
+            href="https://linkedin.com/in/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-8 py-4 bg-gray-900/50 border border-gray-700 rounded-full hover:text-blue-400 hover:border-blue-400 transition-all duration-300 hover:scale-105"
+          >
+            <i data-lucide="linkedin" class="w-6 h-6"></i>
+            <span class="font-semibold">LinkedIn</span>
+            <i
+              data-lucide="external-link"
+              class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></i>
+          </a>
+
+          <a
+            href="https://github.com/yourprofile"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center gap-3 px-8 py-4 bg-gray-900/50 border border-gray-700 rounded-full hover:text-purple-400 hover:border-purple-400 transition-all duration-300 hover:scale-105"
+          >
+            <i data-lucide="github" class="w-6 h-6"></i>
+            <span class="font-semibold">GitHub</span>
+            <i
+              data-lucide="external-link"
+              class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></i>
+          </a>-->
+
+          <a
+            href="mailto:wan@ceriachat.com"
+            class="group flex items-center gap-3 px-8 py-4 bg-gray-900/50 border border-gray-700 rounded-full hover:text-rose-400 hover:border-rose-400 transition-all duration-300 hover:scale-105"
+          >
+            <i data-lucide="mail" class="w-6 h-6"></i>
+            <span class="font-semibold">Email</span>
+            <i
+              data-lucide="external-link"
+              class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800 text-center">
+      <div class="flex items-center justify-center gap-2 text-gray-400 text-sm">
+        <span>Built with</span>
+        <i
+          data-lucide="heart"
+          class="w-4 h-4 text-rose-400 animate-pulse"
+          fill="currentColor"
+        ></i>
+        <span>,</span>
+        <i data-lucide="code-2" class="w-4 h-4 text-amber-400"></i>
+        <span>logic, and a little bit of</span>
+        <i
+          data-lucide="sparkles"
+          class="w-4 h-4 text-amber-400 animate-pulse"
+        ></i>
+        <span>AI magic.</span>
+      </div>
+      <div class="mt-6 text-xs text-gray-600">
+        © <span id="year"></span> All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Lucide icons
+      lucide.createIcons();
+
+      // Smooth scroll helper
+      function scrollToSection(id) {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Navbar scroll effect
+      window.addEventListener("scroll", () => {
+        const nav = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          nav.classList.add(
+            "bg-gray-950/95",
+            "backdrop-blur-md",
+            "border-b",
+            "border-gray-800",
+            "py-4"
+          );
+          nav.classList.remove("bg-transparent", "py-6");
+        } else {
+          nav.classList.remove(
+            "bg-gray-950/95",
+            "backdrop-blur-md",
+            "border-b",
+            "border-gray-800",
+            "py-4"
+          );
+          nav.classList.add("bg-transparent", "py-6");
+        }
+      });
+
+      // Dynamic footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
